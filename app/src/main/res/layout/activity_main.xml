@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/RelativeLayout"
+    >
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:liftOnScroll="true"
+        style="@style/Base.Theme.ToDoApp"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:title="To Do Task"
+            app:titleMarginStart="30dp"
+            app:titleTextColor="@color/Saff_yellow"
+            app:titleTextAppearance="@style/MyActionBar"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomCard"
+        style="@style/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        android:layout_below="@+id/topAppBarLayout"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editTextCard"
+            style="@style/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="15dp">
+
+            <EditText
+                android:id="@+id/addTaskEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:background="@null"
+                android:hint="Add Task"
+                android:inputType="text"
+                android:textColor="@color/Saff_yellow"
+                android:textColorHint="@color/Saff_yellow" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addTaskButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right | center"
+            android:layout_margin="10dp"
+            style="@style/buttonAddTask"
+            app:fabCustomSize="50dp"
+            android:elevation="5dp"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/recyclerCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bottomCard"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="18dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        style="@style/cardView"
+        android:nestedScrollingEnabled="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tasklist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/divider"
+        style="@style/divider"
+        android:layout_below="@+id/recyclerCardView"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#505050" />
+
+    <TextView
+        android:id="@+id/completedTaskTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Completed  Tasks"
+        style="@style/MyActionBar"
+        android:textSize="30sp"
+        android:layout_below="@+id/divider"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/Saff_yellow"/>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/recyclerCardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/completedTaskTextView"
+        android:layout_marginHorizontal="18dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        style="@style/cardView"
+        android:nestedScrollingEnabled="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/completedTaskList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
+
+</ScrollView>
